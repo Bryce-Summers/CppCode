@@ -1,0 +1,21 @@
+# depslib dependency file v1.0
+1438653738 source:c:\users\bryce\desktop\git code\cppcode\cppcodebase\src\leftistheap.cpp
+	"LeftistHeap.h"
+
+1438655235 c:\users\bryce\desktop\git code\cppcode\cppcodebase\include\leftistheap.h
+	"ADT_PriorityQueue.h"
+	<cstddef>
+
+1438654181 c:\users\bryce\desktop\git code\cppcode\cppcodebase\include\adt_priorityqueue.h
+
+1438655805 source:c:\users\bryce\desktop\git code\cppcode\cppcodebase\src\main.cpp
+	"../include/Tester.h"
+
+1438655838 c:\users\bryce\desktop\git code\cppcode\cppcodebase\include\tester.h
+	"LeftistHeap.h"
+	<iostream>
+	<stdexcept>
+
+1438656101 source:c:\users\bryce\desktop\git code\cppcode\cppcodebase\src\tester.cpp
+	"Tester.h"
+
