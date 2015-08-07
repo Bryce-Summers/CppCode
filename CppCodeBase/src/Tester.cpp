@@ -67,6 +67,24 @@ void Tester::testLeftistHeap()
 
 void Tester::testSegmentTree()
 {
+    std::set<int> coords;
+
+    for(int i = 0; i < 10; i++)
+    {
+        coords.insert(i);
+        coords.insert(-i);
+    }
+
+    SegmentTree<int, std::pair<int, int> * > tree(coords);
+
+    tree.addSegment(0, 100, new std::pair<int, int>(0, 100));
+    tree.addSegment(0, 100, new std::pair<int, int>(20, 80));
+
+    std::vector<std::pair<int, int> *> segments;
+
+    tree.pointQuery(1, segments);
+
+    ASSERT(segments.size() == 1);
 
 }
 
