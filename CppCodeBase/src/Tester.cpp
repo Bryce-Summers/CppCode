@@ -75,12 +75,19 @@ void Tester::testSegmentTree()
         coords.insert(-i);
     }
 
-    SegmentTree<int, std::pair<int, int> * > tree(coords);
+    typedef std::pair<int, int> Interval;
 
-    tree.addSegment(0, 100, new std::pair<int, int>(0, 100));
-    tree.addSegment(0, 100, new std::pair<int, int>(20, 80));
+    SegmentTree<int, Interval > tree(coords);
 
-    std::vector<std::pair<int, int> *> segments;
+    Interval i1 = std::pair<int, int>(0, 100);
+    Interval i2 = std::pair<int, int>(20, 80);
+
+    std::cout << i1.first << ", " << i1.second << std::endl;
+
+    tree.addSegment(0, 100, i1);
+    tree.addSegment(0, 100, i2);
+
+    std::vector<Interval> segments;
 
     tree.pointQuery(1, segments);
 

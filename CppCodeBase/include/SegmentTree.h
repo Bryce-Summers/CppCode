@@ -88,7 +88,7 @@ class SegmentTree
         }
 
         // RETURNS true iff the given segment has been removed.
-        bool removeSegment(Coord left, Coord right, Segment * seg)
+        bool removeSegment(Coord left, Coord right, Segment seg)
         {
             // Reduce to a helper function.
             // 'false' means 'remove'
@@ -109,9 +109,22 @@ class SegmentTree
             root ->  left_coord = sorted_coordinate_list[index_start];
             root -> right_coord = sorted_coordinate_list[index_end - 1];
 
+            //root ->segments.clear();
+
             int split_index  = (index_start + index_end)/2;
-            root->left_node  = buildTree(sorted_coordinate_list, index_start, split_index);
-            root->right_node = buildTree(sorted_coordinate_list, split_index, index_end);
+
+            if(split_index > index_start)
+            {
+                root->left_node  = buildTree(sorted_coordinate_list, index_start, split_index);
+
+                root->right_node = buildTree(sorted_coordinate_list, split_index, index_end);
+            }
+            else
+            {
+
+                root ->left_node = NULL;
+                root ->right_node = NULL;
+            }
 
             // The list of segments has already been allocated automatically.
         }
@@ -144,7 +157,7 @@ class SegmentTree
             {
                 if(add)
                 {
-                    node ->segments.insert(seg);
+                    (node ->segments).insert(seg);
                     return false;
                 }
                 else
@@ -153,7 +166,6 @@ class SegmentTree
                     typename std::set<Segment>::iterator iter = (node->segments).find (seg);
                     if(iter != (node->segments).end())
                     {
-
                         node->segments.erase(iter);
                         return true;
                     }

@@ -11,11 +11,18 @@
 1438655805 source:c:\users\bryce\desktop\git code\cppcode\cppcodebase\src\main.cpp
 	"../include/Tester.h"
 
-1438655838 c:\users\bryce\desktop\git code\cppcode\cppcodebase\include\tester.h
+1438972607 c:\users\bryce\desktop\git code\cppcode\cppcodebase\include\tester.h
 	"LeftistHeap.h"
+	"SegmentTree.h"
 	<iostream>
 	<stdexcept>
+	<set>
 
-1438656101 source:c:\users\bryce\desktop\git code\cppcode\cppcodebase\src\tester.cpp
+1438973927 source:c:\users\bryce\desktop\git code\cppcode\cppcodebase\src\tester.cpp
 	"Tester.h"
+
+1439069657 c:\users\bryce\desktop\git code\cppcode\cppcodebase\include\segmenttree.h
+	<set>
+	<vector>
+	<stdexcept>
 
